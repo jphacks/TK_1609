@@ -1,0 +1,11 @@
+node_modules/
+dist/*
+!.keep
+.DS_Store
+.env
+npm-debug.log
+/*.svg
+/*.woff2
+/*.ttf
+/*.eot
+/*.woff
