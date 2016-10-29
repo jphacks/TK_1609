@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dancer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @dancer.email %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @dancer.image %>
+</p>
+
+<p>
+  <strong>Crypted password:</strong>
+  <%= @dancer.crypted_password %>
+</p>
+
+<p>
+  <strong>Salt:</strong>
+  <%= @dancer.salt %>
+</p>
+
+<p>
+  <strong>Remember me token:</strong>
+  <%= @dancer.remember_me_token %>
+</p>
+
+<p>
+  <strong>Remember me token expires at:</strong>
+  <%= @dancer.remember_me_token_expires_at %>
+</p>
+
+<%= link_to 'Edit', edit_dancer_path(@dancer) %> |
+<%= link_to 'Back', dancers_path %>

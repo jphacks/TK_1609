@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dancers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Image</th>
+      <th>Crypted password</th>
+      <th>Salt</th>
+      <th>Remember me token</th>
+      <th>Remember me token expires at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dancers.each do |dancer| %>
+      <tr>
+        <td><%= dancer.name %></td>
+        <td><%= dancer.email %></td>
+        <td><%= dancer.image %></td>
+        <td><%= dancer.crypted_password %></td>
+        <td><%= dancer.salt %></td>
+        <td><%= dancer.remember_me_token %></td>
+        <td><%= dancer.remember_me_token_expires_at %></td>
+        <td><%= link_to 'Show', dancer %></td>
+        <td><%= link_to 'Edit', edit_dancer_path(dancer) %></td>
+        <td><%= link_to 'Destroy', dancer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dancer', new_dancer_path %>

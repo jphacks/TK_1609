@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  introduction: MyText
+  effect: MyString
+  movie: MyString
+  dancer_id: 
+  music_id: 
+
+two:
+  title: MyString
+  introduction: MyText
+  effect: MyString
+  movie: MyString
+  dancer_id: 
+  music_id: 
