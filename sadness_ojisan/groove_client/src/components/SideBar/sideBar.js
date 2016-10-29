@@ -1,13 +1,12 @@
 import Vue from 'vue'
+import store from '../../vuex/store.js';
   export default {
-    mixins: [
-
-    ],
     components: {
 
     },
     vuex: {
       getters: {
+        me: state => state.me
       },
       actions: {
       }

@@ -6,12 +6,14 @@ import store from '../../vuex/store.js'
     },
     vuex: {
       getters: {
+        me: state => state.me
       },
       actions: {
       }
     },
 
     created() {
+      console.log("[Header] this.me: " + this.me);
       console.log("[Header] headerComponent created");
     }
   }
