@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'me/show'
+
   get 'dancer_sessions/new'
 
   get 'dancer_sessions/create'
