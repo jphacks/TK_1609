@@ -13,6 +13,8 @@ curl -i -X POST http://localhost:3000/api/v1/login -d 'dancer[email]=hoge' -d 'd
 
 ## ダンサー情報取得
 curl -i -X GET -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' http://localhost:3000/api/v1/dancers
+## レコード取得
+curl -i -X GET -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' http://localhost:3000/api/v1/records
 
 ## Record作成
 curl -i -X POST localhost:3000/api/v1/records -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'record[title]=があああああ' -d 'record[introduction]=があああああ' -d 'record[effect]=があああああ' -d 'record[movie]=があああああ' -d 'record[password_confirmation]=があああああ' -d 'record[dancer_id]=1' -d 'record[music_id]=1'
@@ -29,7 +31,6 @@ curl -i -X POST localhost:3000/api/v1/records -H 'ACCESS_TOKEN: 5a1895693fd080f3
 
 curl -i -X POST localhost:3000/api/v1/records -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'record[title]=にぽおおお' -d 'record[introduction]=にぽおおお' -d 'record[effect]=にぽおおお' -d 'record[movie]=にぽおおお' -d 'record[password_confirmation]=にぽおおお' -d 'record[dancer_id]=3' -d 'record[music_id]=1'
 
-
 curl -i -X POST localhost:3000/api/v1/records -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'record[title]=にぽおおお' -d 'record[introduction]=にぽおおお' -d 'record[effect]=にぽおおお' -d 'record[movie]=にぽおおお' -d 'record[password_confirmation]=にぽおおお' -d 'record[dancer_id]=1' -d 'record[music_id]=2'
 
 curl -i -X POST localhost:3000/api/v1/records -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'record[title]=があああああ' -d 'record[introduction]=があああああ' -d 'record[effect]=があああああ' -d 'record[movie]=があああああ' -d 'record[password_confirmation]=があああああ' -d 'record[dancer_id]=2' -d 'record[music_id]=1'
@@ -40,6 +41,9 @@ curl -i -X POST localhost:3000/api/v1/records -H 'ACCESS_TOKEN: 5a1895693fd080f3
 curl -i -X POST localhost:3000/api/v1/musics -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'music[name]=プリキュア' -d 'music[bpm]=120' -d 'music[file]=hogeeeeee'
 
 curl -i -X POST localhost:3000/api/v1/musics -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'music[name]=あいかつ' -d 'music[bpm]=120' -d 'music[file]=hogeeeeee'
+
+curl -i -X POST localhost:3000/api/v1/musics -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'music[name]=aaaa' -d 'music[bpm]=bbbbbb' -d 'music[file]=ccccccccccccccc'
+
 
 ## Fav作成
 curl -i -X POST localhost:3000/api/v1/favorites -H 'ACCESS_TOKEN: 5a1895693fd080f3ae3b6a6d0fa788dd' -d 'favorite[dancer_id]=1' -d 'favorite[record_id]=2'
