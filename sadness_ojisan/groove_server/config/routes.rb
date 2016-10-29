@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :dancers
   namespace :api, { format: 'json' }  do
     namespace :v1 do
+      post 'login' => 'dancer_sessions#create', :as => :login
+      post 'logout' => 'dancer_sessions#destroy', :as => :logout
+      resource :me, controller: :me
       resources :answers
       resources :questions
       resources :follows
