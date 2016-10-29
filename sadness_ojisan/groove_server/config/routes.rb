@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'dancer_sessions/new'
+
+  get 'dancer_sessions/create'
+
+  get 'dancer_sessions/destroy'
+
   resources :answers
   resources :questions
   resources :follows
