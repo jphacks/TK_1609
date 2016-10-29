@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import store from '../../vuex/store.js'
-// import RecordList from '../RecordList/RecordList.vue'
+import RecordList from '../RecordList/RecordList.vue'
 import {getMyInfo} from '../../vuex/action.js'
 
   export default {
     components: {
-      // 'record-list': RecordList
+      'record-list': RecordList
     },
     vuex: {
       getters: {
