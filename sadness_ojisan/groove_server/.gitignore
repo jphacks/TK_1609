@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 /public/uploads
-config/initialize/carrierwave.rb
+config/initializers/carrierwave.rb
