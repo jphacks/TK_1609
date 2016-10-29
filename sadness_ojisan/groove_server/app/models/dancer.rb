@@ -1,5 +1,6 @@
 class Dancer < ActiveRecord::Base
   authenticates_with_sorcery!
+  mount_uploader :image, ImageUploader
   validates :password, confirmation: true
   has_many :favorites
   has_many :records
