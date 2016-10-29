@@ -1,6 +1,8 @@
 module Api
   module V1
     class DancersController < ApplicationBaseController
+      skip_before_filter :require_valid_token, only: :create
+      before_action :set_dancer, only: [:show, :edit, :update, :destroy]
       def index
         @dancers = Dancer.all
       end
