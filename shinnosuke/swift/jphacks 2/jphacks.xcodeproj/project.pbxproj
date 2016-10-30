@@ -1,0 +1,854 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21EF96B5C3BE943F095A8E9B /* Pods_jphacksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E956C54632658AB9C1D0DAB /* Pods_jphacksTests.framework */; };
+		8DDD868FD8616667AB97EBB7 /* Pods_jphacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702AC5453233254BFB3707A1 /* Pods_jphacks.framework */; };
+		CF0276591DC4998300AF0A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0276581DC4998300AF0A20 /* AppDelegate.swift */; };
+		CF02765B1DC4998300AF0A20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF02765A1DC4998300AF0A20 /* ViewController.swift */; };
+		CF02765D1DC4998300AF0A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF02765C1DC4998300AF0A20 /* Assets.xcassets */; };
+		CF0276601DC4998300AF0A20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF02765E1DC4998300AF0A20 /* Main.storyboard */; };
+		CF02766B1DC4998300AF0A20 /* jphacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF02766A1DC4998300AF0A20 /* jphacksTests.swift */; };
+		CF0276761DC4998300AF0A20 /* jphacksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0276751DC4998300AF0A20 /* jphacksUITests.swift */; };
+		CF0276861DC4F30E00AF0A20 /* BLEBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0276851DC4F30E00AF0A20 /* BLEBaseClass.m */; };
+		CFAD94991DC5628E00A333A8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CFAD94631DC5628E00A333A8 /* .gitignore */; };
+		CFAD94A31DC5628E00A333A8 /* F53OSC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = CFAD94781DC5628E00A333A8 /* F53OSC.podspec */; };
+		CFAD94A41DC5628E00A333A8 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD947A1DC5628E00A333A8 /* F53OSCBundle.m */; };
+		CFAD94A51DC5628E00A333A8 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD947C1DC5628E00A333A8 /* F53OSCClient.m */; };
+		CFAD94A61DC5628E00A333A8 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD947F1DC5628E00A333A8 /* F53OSCMessage.m */; };
+		CFAD94A71DC5628E00A333A8 /* F53OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94811DC5628E00A333A8 /* F53OSCPacket.m */; };
+		CFAD94A81DC5628E00A333A8 /* F53OSCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94831DC5628E00A333A8 /* F53OSCParser.m */; };
+		CFAD94A91DC5628E00A333A8 /* F53OSCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94861DC5628E00A333A8 /* F53OSCServer.m */; };
+		CFAD94AA1DC5628E00A333A8 /* F53OSCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94881DC5628E00A333A8 /* F53OSCSocket.m */; };
+		CFAD94AB1DC5628E00A333A8 /* F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD948A1DC5628E00A333A8 /* F53OSCTimeTag.m */; };
+		CFAD94AC1DC5628E00A333A8 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD948C1DC5628E00A333A8 /* GCDAsyncSocket.m */; };
+		CFAD94AD1DC5628E00A333A8 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD948E1DC5628E00A333A8 /* GCDAsyncUdpSocket.m */; };
+		CFAD94AE1DC5628E00A333A8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFAD948F1DC5628E00A333A8 /* LICENSE.txt */; };
+		CFAD94AF1DC5628E00A333A8 /* NSData+F53OSCBlob.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94911DC5628E00A333A8 /* NSData+F53OSCBlob.m */; };
+		CFAD94B01DC5628E00A333A8 /* NSDate+F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94931DC5628E00A333A8 /* NSDate+F53OSCTimeTag.m */; };
+		CFAD94B11DC5628E00A333A8 /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94951DC5628E00A333A8 /* NSNumber+F53OSCNumber.m */; };
+		CFAD94B21DC5628E00A333A8 /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94971DC5628E00A333A8 /* NSString+F53OSCString.m */; };
+		CFAD94B31DC5628E00A333A8 /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = CFAD94981DC5628E00A333A8 /* README.markdown */; };
+		D8167D8901DA330F7953FFC2 /* Pods_jphacksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D938D9B8CBAC3E0CD216384 /* Pods_jphacksUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF0276671DC4998300AF0A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF02764D1DC4998300AF0A20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF0276541DC4998300AF0A20;
+			remoteInfo = jphacks;
+		};
+		CF0276721DC4998300AF0A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF02764D1DC4998300AF0A20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF0276541DC4998300AF0A20;
+			remoteInfo = jphacks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E956C54632658AB9C1D0DAB /* Pods_jphacksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jphacksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B97FCAFCCD29C23F0331C37 /* Pods-jphacksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jphacksUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jphacksUITests/Pods-jphacksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F053FB38D5F0C9EAA55D828 /* Pods-jphacksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jphacksUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jphacksUITests/Pods-jphacksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D938D9B8CBAC3E0CD216384 /* Pods_jphacksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jphacksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		702AC5453233254BFB3707A1 /* Pods_jphacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jphacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33A2D1B03EDBBA3F6008003 /* Pods-jphacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jphacks.release.xcconfig"; path = "Pods/Target Support Files/Pods-jphacks/Pods-jphacks.release.xcconfig"; sourceTree = "<group>"; };
+		C39014A30DD8180470DC89F6 /* Pods-jphacks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jphacks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jphacks/Pods-jphacks.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0276551DC4998300AF0A20 /* jphacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jphacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0276581DC4998300AF0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF02765A1DC4998300AF0A20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF02765C1DC4998300AF0A20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF02765F1DC4998300AF0A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF0276611DC4998300AF0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF0276661DC4998300AF0A20 /* jphacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jphacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF02766A1DC4998300AF0A20 /* jphacksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jphacksTests.swift; sourceTree = "<group>"; };
+		CF02766C1DC4998300AF0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF0276711DC4998300AF0A20 /* jphacksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jphacksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0276751DC4998300AF0A20 /* jphacksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jphacksUITests.swift; sourceTree = "<group>"; };
+		CF0276771DC4998300AF0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF0276831DC4F30D00AF0A20 /* jphacks-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jphacks-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF0276841DC4F30E00AF0A20 /* BLEBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEBaseClass.h; sourceTree = "<group>"; };
+		CF0276851DC4F30E00AF0A20 /* BLEBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEBaseClass.m; sourceTree = "<group>"; };
+		CF0276891DC4F39800AF0A20 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		CFAD94631DC5628E00A333A8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CFAD94771DC5628E00A333A8 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
+		CFAD94781DC5628E00A333A8 /* F53OSC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = F53OSC.podspec; sourceTree = "<group>"; };
+		CFAD94791DC5628E00A333A8 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
+		CFAD947A1DC5628E00A333A8 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
+		CFAD947B1DC5628E00A333A8 /* F53OSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCClient.h; sourceTree = "<group>"; };
+		CFAD947C1DC5628E00A333A8 /* F53OSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCClient.m; sourceTree = "<group>"; };
+		CFAD947D1DC5628E00A333A8 /* F53OSCFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCFoundationAdditions.h; sourceTree = "<group>"; };
+		CFAD947E1DC5628E00A333A8 /* F53OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCMessage.h; sourceTree = "<group>"; };
+		CFAD947F1DC5628E00A333A8 /* F53OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCMessage.m; sourceTree = "<group>"; };
+		CFAD94801DC5628E00A333A8 /* F53OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCPacket.h; sourceTree = "<group>"; };
+		CFAD94811DC5628E00A333A8 /* F53OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCPacket.m; sourceTree = "<group>"; };
+		CFAD94821DC5628E00A333A8 /* F53OSCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCParser.h; sourceTree = "<group>"; };
+		CFAD94831DC5628E00A333A8 /* F53OSCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCParser.m; sourceTree = "<group>"; };
+		CFAD94841DC5628E00A333A8 /* F53OSCProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCProtocols.h; sourceTree = "<group>"; };
+		CFAD94851DC5628E00A333A8 /* F53OSCServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCServer.h; sourceTree = "<group>"; };
+		CFAD94861DC5628E00A333A8 /* F53OSCServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCServer.m; sourceTree = "<group>"; };
+		CFAD94871DC5628E00A333A8 /* F53OSCSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCSocket.h; sourceTree = "<group>"; };
+		CFAD94881DC5628E00A333A8 /* F53OSCSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCSocket.m; sourceTree = "<group>"; };
+		CFAD94891DC5628E00A333A8 /* F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCTimeTag.h; sourceTree = "<group>"; };
+		CFAD948A1DC5628E00A333A8 /* F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCTimeTag.m; sourceTree = "<group>"; };
+		CFAD948B1DC5628E00A333A8 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		CFAD948C1DC5628E00A333A8 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		CFAD948D1DC5628E00A333A8 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		CFAD948E1DC5628E00A333A8 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		CFAD948F1DC5628E00A333A8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		CFAD94901DC5628E00A333A8 /* NSData+F53OSCBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+F53OSCBlob.h"; sourceTree = "<group>"; };
+		CFAD94911DC5628E00A333A8 /* NSData+F53OSCBlob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+F53OSCBlob.m"; sourceTree = "<group>"; };
+		CFAD94921DC5628E00A333A8 /* NSDate+F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+F53OSCTimeTag.h"; sourceTree = "<group>"; };
+		CFAD94931DC5628E00A333A8 /* NSDate+F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+F53OSCTimeTag.m"; sourceTree = "<group>"; };
+		CFAD94941DC5628E00A333A8 /* NSNumber+F53OSCNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+F53OSCNumber.h"; sourceTree = "<group>"; };
+		CFAD94951DC5628E00A333A8 /* NSNumber+F53OSCNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+F53OSCNumber.m"; sourceTree = "<group>"; };
+		CFAD94961DC5628E00A333A8 /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+F53OSCString.h"; sourceTree = "<group>"; };
+		CFAD94971DC5628E00A333A8 /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+F53OSCString.m"; sourceTree = "<group>"; };
+		CFAD94981DC5628E00A333A8 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		D1DD19564B5E9C7D04EFC32A /* Pods-jphacksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jphacksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jphacksTests/Pods-jphacksTests.release.xcconfig"; sourceTree = "<group>"; };
+		E79DE01EB58EA011D754848A /* Pods-jphacksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jphacksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jphacksTests/Pods-jphacksTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF0276521DC4998300AF0A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDD868FD8616667AB97EBB7 /* Pods_jphacks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0276631DC4998300AF0A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21EF96B5C3BE943F095A8E9B /* Pods_jphacksTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF02766E1DC4998300AF0A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8167D8901DA330F7953FFC2 /* Pods_jphacksUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E420FBB1C37905FCF0DE6B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				702AC5453233254BFB3707A1 /* Pods_jphacks.framework */,
+				0E956C54632658AB9C1D0DAB /* Pods_jphacksTests.framework */,
+				5D938D9B8CBAC3E0CD216384 /* Pods_jphacksUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F4459BD154399E0F3440205 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C39014A30DD8180470DC89F6 /* Pods-jphacks.debug.xcconfig */,
+				B33A2D1B03EDBBA3F6008003 /* Pods-jphacks.release.xcconfig */,
+				E79DE01EB58EA011D754848A /* Pods-jphacksTests.debug.xcconfig */,
+				D1DD19564B5E9C7D04EFC32A /* Pods-jphacksTests.release.xcconfig */,
+				4F053FB38D5F0C9EAA55D828 /* Pods-jphacksUITests.debug.xcconfig */,
+				4B97FCAFCCD29C23F0331C37 /* Pods-jphacksUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF02764C1DC4998300AF0A20 = {
+			isa = PBXGroup;
+			children = (
+				CF0276571DC4998300AF0A20 /* jphacks */,
+				CF0276691DC4998300AF0A20 /* jphacksTests */,
+				CF0276741DC4998300AF0A20 /* jphacksUITests */,
+				CF0276561DC4998300AF0A20 /* Products */,
+				9F4459BD154399E0F3440205 /* Pods */,
+				3E420FBB1C37905FCF0DE6B5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF0276561DC4998300AF0A20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF0276551DC4998300AF0A20 /* jphacks.app */,
+				CF0276661DC4998300AF0A20 /* jphacksTests.xctest */,
+				CF0276711DC4998300AF0A20 /* jphacksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF0276571DC4998300AF0A20 /* jphacks */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD94621DC5628E00A333A8 /* F53OSC */,
+				CF0276841DC4F30E00AF0A20 /* BLEBaseClass.h */,
+				CF0276851DC4F30E00AF0A20 /* BLEBaseClass.m */,
+				CF0276581DC4998300AF0A20 /* AppDelegate.swift */,
+				CF02765A1DC4998300AF0A20 /* ViewController.swift */,
+				CF02765C1DC4998300AF0A20 /* Assets.xcassets */,
+				CF02765E1DC4998300AF0A20 /* Main.storyboard */,
+				CF0276611DC4998300AF0A20 /* Info.plist */,
+				CF0276831DC4F30D00AF0A20 /* jphacks-Bridging-Header.h */,
+				CF0276891DC4F39800AF0A20 /* PrefixHeader.pch */,
+			);
+			path = jphacks;
+			sourceTree = "<group>";
+		};
+		CF0276691DC4998300AF0A20 /* jphacksTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF02766A1DC4998300AF0A20 /* jphacksTests.swift */,
+				CF02766C1DC4998300AF0A20 /* Info.plist */,
+			);
+			path = jphacksTests;
+			sourceTree = "<group>";
+		};
+		CF0276741DC4998300AF0A20 /* jphacksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF0276751DC4998300AF0A20 /* jphacksUITests.swift */,
+				CF0276771DC4998300AF0A20 /* Info.plist */,
+			);
+			path = jphacksUITests;
+			sourceTree = "<group>";
+		};
+		CFAD94621DC5628E00A333A8 /* F53OSC */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD94631DC5628E00A333A8 /* .gitignore */,
+				CFAD94771DC5628E00A333A8 /* F53OSC.h */,
+				CFAD94781DC5628E00A333A8 /* F53OSC.podspec */,
+				CFAD94791DC5628E00A333A8 /* F53OSCBundle.h */,
+				CFAD947A1DC5628E00A333A8 /* F53OSCBundle.m */,
+				CFAD947B1DC5628E00A333A8 /* F53OSCClient.h */,
+				CFAD947C1DC5628E00A333A8 /* F53OSCClient.m */,
+				CFAD947D1DC5628E00A333A8 /* F53OSCFoundationAdditions.h */,
+				CFAD947E1DC5628E00A333A8 /* F53OSCMessage.h */,
+				CFAD947F1DC5628E00A333A8 /* F53OSCMessage.m */,
+				CFAD94801DC5628E00A333A8 /* F53OSCPacket.h */,
+				CFAD94811DC5628E00A333A8 /* F53OSCPacket.m */,
+				CFAD94821DC5628E00A333A8 /* F53OSCParser.h */,
+				CFAD94831DC5628E00A333A8 /* F53OSCParser.m */,
+				CFAD94841DC5628E00A333A8 /* F53OSCProtocols.h */,
+				CFAD94851DC5628E00A333A8 /* F53OSCServer.h */,
+				CFAD94861DC5628E00A333A8 /* F53OSCServer.m */,
+				CFAD94871DC5628E00A333A8 /* F53OSCSocket.h */,
+				CFAD94881DC5628E00A333A8 /* F53OSCSocket.m */,
+				CFAD94891DC5628E00A333A8 /* F53OSCTimeTag.h */,
+				CFAD948A1DC5628E00A333A8 /* F53OSCTimeTag.m */,
+				CFAD948B1DC5628E00A333A8 /* GCDAsyncSocket.h */,
+				CFAD948C1DC5628E00A333A8 /* GCDAsyncSocket.m */,
+				CFAD948D1DC5628E00A333A8 /* GCDAsyncUdpSocket.h */,
+				CFAD948E1DC5628E00A333A8 /* GCDAsyncUdpSocket.m */,
+				CFAD948F1DC5628E00A333A8 /* LICENSE.txt */,
+				CFAD94901DC5628E00A333A8 /* NSData+F53OSCBlob.h */,
+				CFAD94911DC5628E00A333A8 /* NSData+F53OSCBlob.m */,
+				CFAD94921DC5628E00A333A8 /* NSDate+F53OSCTimeTag.h */,
+				CFAD94931DC5628E00A333A8 /* NSDate+F53OSCTimeTag.m */,
+				CFAD94941DC5628E00A333A8 /* NSNumber+F53OSCNumber.h */,
+				CFAD94951DC5628E00A333A8 /* NSNumber+F53OSCNumber.m */,
+				CFAD94961DC5628E00A333A8 /* NSString+F53OSCString.h */,
+				CFAD94971DC5628E00A333A8 /* NSString+F53OSCString.m */,
+				CFAD94981DC5628E00A333A8 /* README.markdown */,
+			);
+			path = F53OSC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF0276541DC4998300AF0A20 /* jphacks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF02767A1DC4998300AF0A20 /* Build configuration list for PBXNativeTarget "jphacks" */;
+			buildPhases = (
+				F183EA8ABFECF3DB090F3CFE /* [CP] Check Pods Manifest.lock */,
+				CF0276511DC4998300AF0A20 /* Sources */,
+				CF0276521DC4998300AF0A20 /* Frameworks */,
+				CF0276531DC4998300AF0A20 /* Resources */,
+				3385D4DDF3D5B8BAFA178E23 /* [CP] Embed Pods Frameworks */,
+				96F2298E00E9952F5E55FBAB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jphacks;
+			productName = jphacks;
+			productReference = CF0276551DC4998300AF0A20 /* jphacks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF0276651DC4998300AF0A20 /* jphacksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF02767D1DC4998300AF0A20 /* Build configuration list for PBXNativeTarget "jphacksTests" */;
+			buildPhases = (
+				4349D552758CB7507277A7C7 /* [CP] Check Pods Manifest.lock */,
+				CF0276621DC4998300AF0A20 /* Sources */,
+				CF0276631DC4998300AF0A20 /* Frameworks */,
+				CF0276641DC4998300AF0A20 /* Resources */,
+				CBED5A6ECF07F5160C5B247C /* [CP] Embed Pods Frameworks */,
+				7D62C5217A8BD5E4E9628C33 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF0276681DC4998300AF0A20 /* PBXTargetDependency */,
+			);
+			name = jphacksTests;
+			productName = jphacksTests;
+			productReference = CF0276661DC4998300AF0A20 /* jphacksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF0276701DC4998300AF0A20 /* jphacksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF0276801DC4998300AF0A20 /* Build configuration list for PBXNativeTarget "jphacksUITests" */;
+			buildPhases = (
+				81546F50938AE9DDEF76FDF1 /* [CP] Check Pods Manifest.lock */,
+				CF02766D1DC4998300AF0A20 /* Sources */,
+				CF02766E1DC4998300AF0A20 /* Frameworks */,
+				CF02766F1DC4998300AF0A20 /* Resources */,
+				66CCD370D46A118380F139C1 /* [CP] Embed Pods Frameworks */,
+				D630A0ED42048107BDB2125C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF0276731DC4998300AF0A20 /* PBXTargetDependency */,
+			);
+			name = jphacksUITests;
+			productName = jphacksUITests;
+			productReference = CF0276711DC4998300AF0A20 /* jphacksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF02764D1DC4998300AF0A20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "DesignCat Inc.";
+				TargetAttributes = {
+					CF0276541DC4998300AF0A20 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9CSCXF22U7;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					CF0276651DC4998300AF0A20 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9CSCXF22U7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CF0276541DC4998300AF0A20;
+					};
+					CF0276701DC4998300AF0A20 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9CSCXF22U7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CF0276541DC4998300AF0A20;
+					};
+				};
+			};
+			buildConfigurationList = CF0276501DC4998300AF0A20 /* Build configuration list for PBXProject "jphacks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF02764C1DC4998300AF0A20;
+			productRefGroup = CF0276561DC4998300AF0A20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF0276541DC4998300AF0A20 /* jphacks */,
+				CF0276651DC4998300AF0A20 /* jphacksTests */,
+				CF0276701DC4998300AF0A20 /* jphacksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF0276531DC4998300AF0A20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF02765D1DC4998300AF0A20 /* Assets.xcassets in Resources */,
+				CFAD94AE1DC5628E00A333A8 /* LICENSE.txt in Resources */,
+				CFAD94991DC5628E00A333A8 /* .gitignore in Resources */,
+				CF0276601DC4998300AF0A20 /* Main.storyboard in Resources */,
+				CFAD94A31DC5628E00A333A8 /* F53OSC.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0276641DC4998300AF0A20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF02766F1DC4998300AF0A20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3385D4DDF3D5B8BAFA178E23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jphacks/Pods-jphacks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4349D552758CB7507277A7C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		66CCD370D46A118380F139C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jphacksUITests/Pods-jphacksUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D62C5217A8BD5E4E9628C33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jphacksTests/Pods-jphacksTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81546F50938AE9DDEF76FDF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		96F2298E00E9952F5E55FBAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jphacks/Pods-jphacks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBED5A6ECF07F5160C5B247C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jphacksTests/Pods-jphacksTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D630A0ED42048107BDB2125C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jphacksUITests/Pods-jphacksUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F183EA8ABFECF3DB090F3CFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF0276511DC4998300AF0A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAD94AA1DC5628E00A333A8 /* F53OSCSocket.m in Sources */,
+				CFAD94A41DC5628E00A333A8 /* F53OSCBundle.m in Sources */,
+				CFAD94A51DC5628E00A333A8 /* F53OSCClient.m in Sources */,
+				CFAD94B21DC5628E00A333A8 /* NSString+F53OSCString.m in Sources */,
+				CFAD94AC1DC5628E00A333A8 /* GCDAsyncSocket.m in Sources */,
+				CFAD94A81DC5628E00A333A8 /* F53OSCParser.m in Sources */,
+				CFAD94AF1DC5628E00A333A8 /* NSData+F53OSCBlob.m in Sources */,
+				CFAD94A91DC5628E00A333A8 /* F53OSCServer.m in Sources */,
+				CFAD94A71DC5628E00A333A8 /* F53OSCPacket.m in Sources */,
+				CFAD94B31DC5628E00A333A8 /* README.markdown in Sources */,
+				CFAD94AB1DC5628E00A333A8 /* F53OSCTimeTag.m in Sources */,
+				CFAD94AD1DC5628E00A333A8 /* GCDAsyncUdpSocket.m in Sources */,
+				CFAD94B11DC5628E00A333A8 /* NSNumber+F53OSCNumber.m in Sources */,
+				CF02765B1DC4998300AF0A20 /* ViewController.swift in Sources */,
+				CFAD94B01DC5628E00A333A8 /* NSDate+F53OSCTimeTag.m in Sources */,
+				CF0276861DC4F30E00AF0A20 /* BLEBaseClass.m in Sources */,
+				CF0276591DC4998300AF0A20 /* AppDelegate.swift in Sources */,
+				CFAD94A61DC5628E00A333A8 /* F53OSCMessage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0276621DC4998300AF0A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF02766B1DC4998300AF0A20 /* jphacksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF02766D1DC4998300AF0A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0276761DC4998300AF0A20 /* jphacksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF0276681DC4998300AF0A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF0276541DC4998300AF0A20 /* jphacks */;
+			targetProxy = CF0276671DC4998300AF0A20 /* PBXContainerItemProxy */;
+		};
+		CF0276731DC4998300AF0A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF0276541DC4998300AF0A20 /* jphacks */;
+			targetProxy = CF0276721DC4998300AF0A20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF02765E1DC4998300AF0A20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF02765F1DC4998300AF0A20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF0276781DC4998300AF0A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF0276791DC4998300AF0A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		CF02767B1DC4998300AF0A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39014A30DD8180470DC89F6 /* Pods-jphacks.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9CSCXF22U7;
+				INFOPLIST_FILE = jphacks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.designcat.jphacks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "jphacks/jphacks-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CF02767C1DC4998300AF0A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33A2D1B03EDBBA3F6008003 /* Pods-jphacks.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9CSCXF22U7;
+				INFOPLIST_FILE = jphacks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.designcat.jphacks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "jphacks/jphacks-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CF02767E1DC4998300AF0A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E79DE01EB58EA011D754848A /* Pods-jphacksTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9CSCXF22U7;
+				INFOPLIST_FILE = jphacksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.designcat.jphacksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jphacks.app/Contents/MacOS/jphacks";
+			};
+			name = Debug;
+		};
+		CF02767F1DC4998300AF0A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1DD19564B5E9C7D04EFC32A /* Pods-jphacksTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9CSCXF22U7;
+				INFOPLIST_FILE = jphacksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.designcat.jphacksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jphacks.app/Contents/MacOS/jphacks";
+			};
+			name = Release;
+		};
+		CF0276811DC4998300AF0A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F053FB38D5F0C9EAA55D828 /* Pods-jphacksUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9CSCXF22U7;
+				INFOPLIST_FILE = jphacksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.designcat.jphacksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = jphacks;
+			};
+			name = Debug;
+		};
+		CF0276821DC4998300AF0A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B97FCAFCCD29C23F0331C37 /* Pods-jphacksUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9CSCXF22U7;
+				INFOPLIST_FILE = jphacksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.designcat.jphacksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = jphacks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF0276501DC4998300AF0A20 /* Build configuration list for PBXProject "jphacks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0276781DC4998300AF0A20 /* Debug */,
+				CF0276791DC4998300AF0A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF02767A1DC4998300AF0A20 /* Build configuration list for PBXNativeTarget "jphacks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF02767B1DC4998300AF0A20 /* Debug */,
+				CF02767C1DC4998300AF0A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF02767D1DC4998300AF0A20 /* Build configuration list for PBXNativeTarget "jphacksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF02767E1DC4998300AF0A20 /* Debug */,
+				CF02767F1DC4998300AF0A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF0276801DC4998300AF0A20 /* Build configuration list for PBXNativeTarget "jphacksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0276811DC4998300AF0A20 /* Debug */,
+				CF0276821DC4998300AF0A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF02764D1DC4998300AF0A20 /* Project object */;
+}

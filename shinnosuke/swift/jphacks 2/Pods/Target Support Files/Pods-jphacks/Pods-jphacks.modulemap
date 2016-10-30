@@ -1,0 +1,6 @@
+framework module Pods_jphacks {
+  umbrella header "Pods-jphacks-umbrella.h"
+
+  export *
+  module * { export * }
+}

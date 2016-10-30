@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  jphacks
+//
+//  Created by Shinnosuke Komiya on 2016/10/30.
+//  Copyright © 2016年 DesignCat Inc. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+
+#define CONNECT_BUTTON 0
+#define DISCONNECT_BUTTON 1
+#define LED_ON_BUTTON 2
+#define LED_OFF_BUTTON 3
+
+
+////BLESerial2
+#define UUID_VSP_SERVICE_BLESerial2					@"bd011f22-7d3c-0db6-e441-55873d44ef40" //VSP
+#define UUID_TX_BLESerial2	                             @"2a750d7d-bd9a-928f-b744-7d5a70cef1f9" //RX
+#define UUID_RX_BLESerial2									@"0503b819-c75b-ba9b-3641-6a7f338dd9bd" //TX
