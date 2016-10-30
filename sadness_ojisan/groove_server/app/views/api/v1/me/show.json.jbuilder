@@ -3,23 +3,15 @@
 json.set! :data do
   json.partial! "dancers/dancer", dancer: @dancer
   json.set! :records do
-    json.array!(@dancer.records) do |record|
-      json.merge! record.attributes
-    end
+    json.array! @dancer.records, partial: 'records/record', as: :record
   end
   json.set! :rank_records do
-    json.array!(@rank_records) do |rank_record|
-      json.merge! rank_record.attributes
-    end
+    json.array! @rank_records, partial: 'records/record', as: :record
   end
   json.set! :follower_records do
-    json.array!(@follower_records) do |follower_record|
-      json.merge! follower_record.attributes
-    end
+    json.array! @follower_records, partial: 'records/record', as: :record
   end
   json.set! :favorite_records do
-    json.array!(@favorite_records) do |favorite_record|
-      json.merge! favorite_record.attributes
-    end
+    json.array! @favorite_records, partial: 'records/record', as: :record
   end
 end
