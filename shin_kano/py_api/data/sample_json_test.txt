@@ -1,0 +1,3 @@
+{accelX:127,accelY:127,accelZ:127,gyroX:187,gyroY:106,gyroZ:101,pressure:101,bendThumb:130,bendIndex:99,bendMiddle:1,bendRing:66,bendPinkie:144}
+{accelX:127,accelY:127,accelZ:127,gyroX:187,gyroY:106,gyroZ:101,pressure:101,bendThumb:130,bendIndex:99,bendMiddle:1,bendRing:66,bendPinkie:144}
+{accelX:127,accelY:127,accelZ:127,gyroX:187,gyroY:106,gyroZ:101,pressure:101,bendThumb:130,bendIndex:99,bendMiddle:1,bendRing:66,bendPinkie:144}

@@ -11,8 +11,8 @@ class StringGenerator(object):
         self.model = model
 
     @cherrypy.expose
-    def generate(self, length=8, length2=8):
-        return str(self.model.predict("data/sample.txt"))
+    def generate(self, data):
+        return str(self.model.predict(data))
 
 class ForceLowerDispatcher(Dispatcher):
     def __call__(self, path_info):
