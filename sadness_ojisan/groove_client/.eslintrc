@@ -1,0 +1,10 @@
+{
+  "globals": {
+    "L": true,
+    "$": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "comma-dangle": 0
+  }
+}
