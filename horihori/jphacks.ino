@@ -22,6 +22,7 @@
 MPU6050 mpu;
 
 // sonsor params
+int atsuryoku_ex = 0;
 int atsuryoku = 0;
 int mage1 = 0;//小指
 int mage2 = 0;//薬指
@@ -30,7 +31,6 @@ int mage4 = 0;//人差し指
 int mage5 = 0;//親指
 
 // calibration
-int atsuryoku_def = 0;
 int mage1_def = 0;//小指
 int mage2_def = 0;//薬指
 int mage3_def = 0;//中指
@@ -97,6 +97,17 @@ int ble_colors[LED_NUM][3] = {
   {0, 0, 255},
   {255, 255, 255},
 };
+
+int beat_index = 0;
+#define BEAT_PATTERN_NUM 5
+int beat_colors[BEAT_PATTERN_NUM][3] = {
+  {70, 70, 255},
+  {255, 0, 100},
+  {0, 255, 0},
+  {255, 0, 255},
+  {255, 100, 0},
+};
+
 //int f_atsu_colors[LED_NUM][3] = {
 //  {255, 255, 0},
 //  {255, 255, 0},
@@ -161,6 +172,7 @@ int circle_interval_time = 5;
 int finger_interval_time = 5;
 
 void led_timer() {
+  // 待機
   if (rsvData == 1) {
     if (timer_count == (255)) {
       timer_count = 0;
@@ -173,6 +185,45 @@ void led_timer() {
     }
   }
   else if (rsvData == 2) {
+    int beat = int(100 * 60 / 90.0);
+    if (timer_count >= beat) {
+      timer_count = 0;
+    }
+    if (sensor_interrupt_flag == false) {
+      int brightness = abs(int(map(timer_count, 0, beat - 1, -255, 255)));
+      //      brightness = -brightness + 255;
+      // 色
+      for (int i = 0; i < LED_NUM; i++) {
+        if (i < 12) {
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+        }
+        else {
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+        }
+      }
+      strip.setBrightness(100);
+    }
+  }
+  else if (rsvData == 3) {
+    int beat = int(100 * 60 / 90.0);
+    if (timer_count >= beat) {
+      timer_count = 0;
+    }
+    if (sensor_interrupt_flag == false) {
+      int brightness = 255;
+      // 色
+      for (int i = 0; i < LED_NUM; i++) {
+        if (i < 12) {
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+        }
+        else {
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+        }
+      }
+      strip.setBrightness(100);
+    }
+  }
+  else if (rsvData == 4) {
     if (timer_count == LED_NUM) {
       timer_count = 0;
     }
@@ -187,7 +238,7 @@ void led_timer() {
       strip.setBrightness(20);
     }
   }
-  else if (rsvData == 3) {
+  else if (rsvData == 5) {
     if (timer_count >= 10) {
       timer_count = 0;
     }
@@ -212,7 +263,7 @@ void led_timer() {
     }
   }
 
-  else if (rsvData == 4) {
+  else if (rsvData == 6) {
     if (timer_count >= 100) {
       timer_count = 0;
     }
@@ -389,14 +440,12 @@ void setup() {
 
   // calibration
   for (int i = 0; i < 5; i++) {
-    atsuryoku_def = analogRead(A0);
     mage1_def += analogRead(A1);//小指
     mage2_def += analogRead(A2);//薬指
     mage3_def += analogRead(A3);//中指
     mage4_def += analogRead(A6);//人差し指
     mage5_def += analogRead(A7);//親指
   }
-  atsuryoku_def /= 5;
   mage1_def /= 5;//小指
   mage2_def /= 5;//薬指
   mage3_def /= 5;//中指
@@ -466,31 +515,10 @@ void loop() {
       rsvData = Serial.read();
       timer_count = 0;
     }
-    if (atsuryoku < 250) {
-      circle_interval_time = 5;
-      finger_interval_time = 5;
-      sensor_interrupt_flag = true;
-      for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-        if (i == circle_led_index) {
-          strip.setPixelColor(i, 255, 255, 255);
-        }
-        else {
-          strip.setPixelColor(i, 0, 0, 0);
-        }
-      }
-      for (int i = 0; i < FINGER_LED_NUM; i++) {
-        if (i == finger_led_index) {
-          strip.setPixelColor(CIRCLE_LED_NUM + i, 255, 255, 255);
-        }
-        else {
-          strip.setPixelColor(CIRCLE_LED_NUM + i, 0, 0, 0);
-        }
-      }
-      strip.setBrightness(200);
-      strip.show();
-    }
+
+    
     // point
-    else if (oyayubi && !hitosashiyubi && nakayubi && kusuriyubi) {
+    if (oyayubi && !hitosashiyubi && nakayubi && kusuriyubi) {
       circle_interval_time = 5;
       finger_interval_time = 5;
       sensor_interrupt_flag = true;
@@ -519,16 +547,16 @@ void loop() {
       finger_interval_time = 10;
       sensor_interrupt_flag = true;
       for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-          strip.setPixelColor(i, 255, 0, 0);
+        strip.setPixelColor(i, 255, 0, 0);
       }
       for (int i = 0; i < FINGER_LED_NUM; i++) {
-          strip.setPixelColor(CIRCLE_LED_NUM + i, 255, 0, 0);
+        strip.setPixelColor(CIRCLE_LED_NUM + i, 255, 0, 0);
       }
-      if(led_reverse){
-        strip.setBrightness(int(map(timer_count_master,0, 100, 0, 255)));
+      if (led_reverse) {
+        strip.setBrightness(int(map(timer_count_master, 0, 100, 0, 255)));
       }
-      else{
-        strip.setBrightness(int(map(timer_count_master,0, 100, 255, 0)));
+      else {
+        strip.setBrightness(int(map(timer_count_master, 0, 100, 255, 0)));
       }
       strip.show();
     }
@@ -538,16 +566,16 @@ void loop() {
       finger_interval_time = 10;
       sensor_interrupt_flag = true;
       for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-          strip.setPixelColor(i, 255, 255, 0);
+        strip.setPixelColor(i, 255, 255, 0);
       }
       for (int i = 0; i < FINGER_LED_NUM; i++) {
-          strip.setPixelColor(CIRCLE_LED_NUM + i, 255, 255, 0);
+        strip.setPixelColor(CIRCLE_LED_NUM + i, 255, 255, 0);
       }
-      if(led_reverse){
-        strip.setBrightness(int(map(timer_count_master,0, 100, 0, 255)));
+      if (led_reverse) {
+        strip.setBrightness(int(map(timer_count_master, 0, 100, 0, 255)));
       }
-      else{
-        strip.setBrightness(int(map(timer_count_master,0, 100, 255, 0)));
+      else {
+        strip.setBrightness(int(map(timer_count_master, 0, 100, 255, 0)));
       }
       strip.show();
     }
@@ -652,6 +680,14 @@ void loop() {
     // パー
     else if (rsvData != 0) {
       sensor_interrupt_flag = false;
+      if (atsuryoku < 250) {
+        if(atsuryoku_ex >= 250){
+          beat_index++;
+          if(beat_index==BEAT_PATTERN_NUM){
+            beat_index = 0;
+          }
+        }
+      }
     }
     else {
       sensor_interrupt_flag = false;
@@ -659,4 +695,5 @@ void loop() {
       strip.show();
     }
   }
+  atsuryoku_ex = atsuryoku;
 }
