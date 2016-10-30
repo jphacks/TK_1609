@@ -1,0 +1,34 @@
+<div class="login-box">
+      <div class="login-logo">
+        <a href="">GROOVE</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">ログインして下さい。</p>
+        <form v-on:submit.prevent="login_method(email, password)">
+          <!-- メール -->
+          <div class="form-group has-feedback">
+            <input v-model="email" type="email" class="form-control" placeholder="Email" />
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+
+          <!-- パスワード -->
+          <div class="form-group has-feedback">
+            <input v-model="password" type="password" class="form-control" placeholder="Password" />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+
+          <!-- ボタン グリッドでセンタリング-->
+          <div class="row">
+            <div class="col-xs-4">
+            </div><!-- /.col -->
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">ログイン</button>
+            </div><!-- /.col -->
+            <div class="col-xs-4">
+            </div><!-- /.col -->
+          </div>
+
+        </form>
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->

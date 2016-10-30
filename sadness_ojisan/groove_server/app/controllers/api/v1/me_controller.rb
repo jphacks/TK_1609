@@ -1,6 +1,6 @@
 module Api
   module V1
-    class MeController < ApplicationBaseControllerurl
+    class MeController < ApplicationBaseController
       def show
         if session[:HTTP_ACCESS_TOKEN] == nil then
           if request.headers[:HTTP_ACCESS_TOKEN] == nil then
