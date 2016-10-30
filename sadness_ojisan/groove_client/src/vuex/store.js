@@ -9,7 +9,9 @@ const state = {
   my_id: null,
   is_login: false,
   access_token: null,
-  me: null
+  me: null,
+  dance_list: null,
+  active_movie: null
 };
 
 export default new Vuex.Store({

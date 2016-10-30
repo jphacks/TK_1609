@@ -6,8 +6,8 @@
         <p>{{me.name}}</p>
         <p>フォロー/フォロワー</p>
       </li>
-      <li class="active"><a href=""><i class="fa fa-circle-o"></i>マイページ</a>
-      <li><a href=""><i class="fa fa-circle-o"></i>ダンス</a>
+      <li class="active" v-link="{ path: '/my_page' }"><a href=""><i class="fa fa-circle-o"></i>マイページ</a>
+      <li v-link="{ path: '/dance_list' }"><a href=""><i class="fa fa-circle-o"></i>ダンス</a>
       <li><a href=""><i class="fa fa-circle-o"></i>曲</a>
         <li><a href=""><i class="fa fa-circle-o"></i>演出</a>
         <li><a href=""><i class="fa fa-circle-o"></i>質問広場</a>

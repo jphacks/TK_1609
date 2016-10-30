@@ -20,3 +20,18 @@ export const getMyInfo = ({ dispatch }, access_token) => {
     console.log('[ACTION] getMyInfo: エラー');
   })
 }
+
+export const getDanceList = ({ dispatch }, access_token) => {
+  console.log("[ACTION] getDanceList: access_tokenは, " + access_token);
+  API.getDanceList(access_token).then((response) => {
+    console.log("[ACTION] getDanceList");
+    dispatch('GET_DANCE_LIST', response)
+  }).catch((reason) => {
+    console.log('[ACTION] getDanceList: エラー');
+  })
+}
+
+export const activateMovie = ({ dispatch }, selected_movie) => {
+  console.log("[ACTION] activateMovie")
+  dispatch('ACTIVATE_MOVIE', selected_movie);
+}

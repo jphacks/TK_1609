@@ -15,5 +15,19 @@ export default {
     console.log(my_info.data);
     state.me = my_info.data;
     console.log('[MUTATIONS] state.me: ' + state.me);
+  },
+
+  GET_DANCE_LIST(state, dance_list){
+    console.log('[MUTATIONS]Called GET_DANCE_LIST: ' + dance_list);
+    console.log(dance_list);
+    state.dance_list = dance_list;
+    console.log('[MUTATIONS] state.dance_list: ' + state.dance_list);
+    console.info(state.dance_list);
+  },
+
+  ACTIVATE_MOVIE(state, dance){
+    console.log('[MUTATIONS]Called ACTIVATE_MOVIE: ' + dance);
+    console.log(dance);
+    state.active_movie = dance
   }
 }
