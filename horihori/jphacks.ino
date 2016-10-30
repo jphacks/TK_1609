@@ -108,26 +108,6 @@ int beat_colors[BEAT_PATTERN_NUM][3] = {
   {255, 100, 0},
 };
 
-//int f_atsu_colors[LED_NUM][3] = {
-//  {255, 255, 0},
-//  {255, 255, 0},
-//  {255, 0, 255},
-//  {255, 0, 255},
-//  {0, 255, 255},
-//  {0, 255, 255},
-//  {255, 0, 0},
-//  {255, 0, 0},
-//  {0, 0, 255},
-//  {0, 0, 255},
-//  {255, 0, 0},
-//  {255, 0, 0},
-//  {255, 255, 255},
-//  {255, 255, 255},
-//  {255, 200, 200},
-//  {255, 200, 200},
-//  {200, 200, 255},
-//  {200, 200, 255},
-//};
 // Input a value 0 to 255 to get a color value.
 // The colours are a transition r - g - b - back to r.
 uint32_t Wheel(byte WheelPos)
@@ -171,6 +151,21 @@ int timer_count = 0;
 int circle_interval_time = 5;
 int finger_interval_time = 5;
 
+void ble_send_data() {
+  Serial.write(HAND); // 右0 左1 //1
+  Serial.write(int(map(ax_row, -32768, 32767, 0, 255)));//2
+  Serial.write(int(map(ay_row, -32768, 32767, 0, 255)));//3
+  Serial.write(int(map(az_row, -32768, 32767, 0, 255)));//4
+  Serial.write(int(map(gx_row, -32768, 32767, 0, 255)));//5
+  Serial.write(int(map(gy_row, -32768, 32767, 0, 255)));//6
+  Serial.write(int(map(gz_row, -32768, 32767, 0, 255)));//7
+  Serial.write(int(map(atsuryoku, 0, 1023, 0, 255)));//8
+  Serial.write(int(map(mage1, 0, 1023, 0, 255)));//9
+  Serial.write(int(map(mage2, 0, 1023, 0, 255)));//10
+  Serial.write(int(map(mage3, 0, 1023, 0, 255)));//11
+  Serial.write(int(map(mage4, 0, 1023, 0, 255)));//12
+  Serial.write(int(map(mage5, 0, 1023, 0, 255)));//13
+}
 void led_timer() {
   // 待機
   if (rsvData == 1) {
@@ -195,10 +190,10 @@ void led_timer() {
       // 色
       for (int i = 0; i < LED_NUM; i++) {
         if (i < 12) {
-          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness / 255), int(beat_colors[beat_index][1]*brightness / 255), int(beat_colors[beat_index][2]*brightness / 255));
         }
         else {
-          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness / 255), int(beat_colors[beat_index][1]*brightness / 255), int(beat_colors[beat_index][2]*brightness / 255));
         }
       }
       strip.setBrightness(100);
@@ -214,10 +209,10 @@ void led_timer() {
       // 色
       for (int i = 0; i < LED_NUM; i++) {
         if (i < 12) {
-          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness / 255), int(beat_colors[beat_index][1]*brightness / 255), int(beat_colors[beat_index][2]*brightness / 255));
         }
         else {
-          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness/255), int(beat_colors[beat_index][1]*brightness/255), int(beat_colors[beat_index][2]*brightness/255));
+          strip.setPixelColor(i, int(beat_colors[beat_index][0]*brightness / 255), int(beat_colors[beat_index][1]*brightness / 255), int(beat_colors[beat_index][2]*brightness / 255));
         }
       }
       strip.setBrightness(100);
@@ -313,31 +308,6 @@ void led_timer() {
     circle_led_index = 0;
   }
 #ifdef DEBUG_MODE
-  //  Serial.print("quat\t");
-  //  Serial.print(ax_row);
-  //  Serial.print("\t");
-  //  Serial.print(ay_row);
-  //  Serial.print("\t");
-  //  Serial.print(az_row);
-  //  Serial.print("\t");
-  //  Serial.print(gx_row);
-  //  Serial.print("\t");
-  //  Serial.print(gy_row);
-  //  Serial.print("\t");
-  //  Serial.print(gz_row);
-  //  Serial.print("\n");
-  //  Serial.print(atsuryoku);
-  //  Serial.print("\t");
-  //  Serial.print(mage1);
-  //  Serial.print("\t");
-  //  Serial.print(mage2);
-  //  Serial.print("\t");
-  //  Serial.print(mage3);
-  //  Serial.print("\t");
-  //  Serial.print(mage4);
-  //  Serial.print("\t");
-  //  Serial.print(mage5);
-  //  Serial.print("\n");
   Serial.print(int(map(ax_row, -32768, 32767, 0, 255)));
   Serial.print("\t");
   Serial.print(int(map(ay_row, -32768, 32767, 0, 255)));
@@ -365,24 +335,7 @@ void led_timer() {
 #else
   //BLEで送ってるところ
   if ((timer_count_master % 5) == 0) {
-    Serial.write(HAND); // 右0 左1 //1
-    //  Serial.write(1); // 右0 左1
-    //  Serial.write(2); // 右0 左1
-    //  Serial.write(3); // 右0 左1
-    //  Serial.write(4); // 右0 左1
-    //  Serial.write(5); // 右0 左1
-    Serial.write(int(map(ax_row, -32768, 32767, 0, 255)));//2
-    Serial.write(int(map(ay_row, -32768, 32767, 0, 255)));//3
-    Serial.write(int(map(az_row, -32768, 32767, 0, 255)));//4
-    Serial.write(int(map(gx_row, -32768, 32767, 0, 255)));//5
-    Serial.write(int(map(gy_row, -32768, 32767, 0, 255)));//6
-    Serial.write(int(map(gz_row, -32768, 32767, 0, 255)));//7
-    Serial.write(int(map(atsuryoku, 0, 1023, 0, 255)));//8
-    Serial.write(int(map(mage1, 0, 1023, 0, 255)));//9
-    Serial.write(int(map(mage2, 0, 1023, 0, 255)));//10
-    Serial.write(int(map(mage3, 0, 1023, 0, 255)));//11
-    Serial.write(int(map(mage4, 0, 1023, 0, 255)));//12
-    Serial.write(int(map(mage5, 0, 1023, 0, 255)));//13
+    ble_send_data();
   }
 #endif
 
@@ -424,13 +377,11 @@ void setup() {
     dmpReady = true;
     packetSize = mpu.dmpGetFIFOPacketSize();
   } else {
-    // ERROR!
-    // 1 = initial memory load failed
-    // 2 = DMP configuration updates failed
-    // (if it's going to break, usually the code will be 1)
-    //        Serial.print(F("DMP Initialization failed (code "));
-    //        Serial.print(devStatus);
-    //        Serial.println(F(")"));
+#ifdef DEBUG_MODE
+    Serial.print(F("DMP Initialization failed (code "));
+    Serial.print(devStatus);
+    Serial.println(F(")"));
+#endif
   }
   strip.show();
 
@@ -492,23 +443,12 @@ void loop() {
       gy_row = -gy_row;
       gz_row = -gz_row;
     }
-    //    ax = float(ax_row) / ACC_LSB;
-    //    ay = float(ay_row) / ACC_LSB;
-    //    az = float(az_row) / ACC_LSB;
-    //    gx = float(gx_row) / GYRO_LSB;
-    //    gy = float(gy_row) / GYRO_LSB;
-    //    gz = float(gz_row) / GYRO_LSB;
     atsuryoku = analogRead(A0);
     mage1 = analogRead(A1);//小指
     mage2 = analogRead(A2);//薬指
     mage3 = analogRead(A3);//中指
     mage4 = analogRead(A6);//人差し指
     mage5 = analogRead(A7);//親指
-    bool oyayubi = mage5 > mage5_def * mage_calib_rate;
-    bool hitosashiyubi = mage4 > mage4_def * mage_calib_rate;
-    bool nakayubi = mage3 > mage3_def * mage_calib_rate;
-    bool kusuriyubi = mage2 > mage2_def * mage_calib_rate;
-    bool koyubi = mage1 > mage1_def * mage_calib_rate;
 
     // BLE Reading
     if (Serial.available() > 0) {
@@ -516,9 +456,8 @@ void loop() {
       timer_count = 0;
     }
 
-    
     // point
-    if (oyayubi && !hitosashiyubi && nakayubi && kusuriyubi) {
+    if (rsvData == 10) {
       circle_interval_time = 5;
       finger_interval_time = 5;
       sensor_interrupt_flag = true;
@@ -542,7 +481,7 @@ void loop() {
       strip.show();
     }
     // グー
-    else if (oyayubi && hitosashiyubi && nakayubi && kusuriyubi) {
+    else if (rsvData == 11) {
       circle_interval_time = 1;
       finger_interval_time = 10;
       sensor_interrupt_flag = true;
@@ -561,7 +500,7 @@ void loop() {
       strip.show();
     }
     // ちょき
-    else if (oyayubi && !hitosashiyubi && !nakayubi && kusuriyubi) {
+    else if (rsvData == 12) {
       circle_interval_time = 1;
       finger_interval_time = 10;
       sensor_interrupt_flag = true;
@@ -579,111 +518,13 @@ void loop() {
       }
       strip.show();
     }
-    //    else if (hitosashiyubi) {
-    //      circle_interval_time = 1;
-    //      finger_interval_time = 10;
-    //      sensor_interrupt_flag = true;
-    //      for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-    //        if (i == circle_led_index) {
-    //          strip.setPixelColor(i, 255, 0, 0);
-    //        }
-    //        else {
-    //          strip.setPixelColor(i, 0, 0, 0);
-    //        }
-    //      }
-    //      for (int i = 0; i < FINGER_LED_NUM; i++) {
-    //        if (i == finger_led_index) {
-    //          strip.setPixelColor(CIRCLE_LED_NUM + i, 0, 0, 255);
-    //        }
-    //        else {
-    //          strip.setPixelColor(CIRCLE_LED_NUM + i, 0, 0, 0);
-    //        }
-    //      }
-    //      strip.setBrightness(255);
-    //      strip.show();
-    //    }
-    //    else if (mage3 > mage3_def * mage_calib_rate) {
-    //      circle_interval_time = 1;
-    //      finger_interval_time = 10;
-    //      sensor_interrupt_flag = true;
-    //      for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-    //        if (i == circle_led_index) {
-    //          strip.setPixelColor(i, 255, 0, 0);
-    //        }
-    //        else {
-    //          strip.setPixelColor(i, 0, 0, 0);
-    //        }
-    //      }
-    //      for (int i = 0; i < FINGER_LED_NUM; i++) {
-    //        if (i == finger_led_index) {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 255);
-    //        }
-    //        else {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 0);
-    //        }
-    //      }
-    //      strip.setBrightness(255);
-    //      strip.show();
-    //    }
-    //    else if (mage2 > mage2_def * mage_calib_rate) {
-    //      circle_interval_time = 1;
-    //      finger_interval_time = 10;
-    //      sensor_interrupt_flag = true;
-    //      for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-    //        if (i == circle_led_index) {
-    //          strip.setPixelColor(i, 255, 0, 0);
-    //        }
-    //        else {
-    //          strip.setPixelColor(i, 0, 0, 0);
-    //        }
-    //      }
-    //      for (int i = 0; i < FINGER_LED_NUM; i++) {
-    //        if (i == finger_led_index) {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 255);
-    //        }
-    //        else if (i == (finger_led_index + 1)) {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 100);
-    //        }
-    //        else if (i == (finger_led_index + 2)) {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 20);
-    //        }
-    //        else {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 0);
-    //        }
-    //      }
-    //      strip.setBrightness(255);
-    //      strip.show();
-    //    }
-    //    else if (mage1 > mage1_def * mage_calib_rate) {
-    //      circle_interval_time = 1;
-    //      finger_interval_time = 3;
-    //      sensor_interrupt_flag = true;
-    //      for (int i = 0; i < CIRCLE_LED_NUM; i++) {
-    //        if (i == circle_led_index) {
-    //          strip.setPixelColor(i, 255, 0, 0);
-    //        }
-    //        else {
-    //          strip.setPixelColor(i, 0, 0, 0);
-    //        }
-    //      }
-    //      for (int i = 0; i < FINGER_LED_NUM; i++) {
-    //        if (i == finger_led_index) {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 255);
-    //        }
-    //        else {
-    //          strip.setPixelColor(LED_NUM - 1 - i, 0, 0, 0);
-    //        }
-    //      }
-    //      strip.setBrightness(255);
-    //      strip.show();
-    //    }
-    // パー
+    // ぱー
     else if (rsvData != 0) {
       sensor_interrupt_flag = false;
       if (atsuryoku < 250) {
-        if(atsuryoku_ex >= 250){
+        if (atsuryoku_ex >= 250) {
           beat_index++;
-          if(beat_index==BEAT_PATTERN_NUM){
+          if (beat_index == BEAT_PATTERN_NUM) {
             beat_index = 0;
           }
         }
