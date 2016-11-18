@@ -1,0 +1,8 @@
+ofxHTTP
+ofxIO
+ofxMaxim
+ofxMediaType
+ofxNetworkUtils
+ofxOsc
+ofxSSLManager
+ofxTaskQueue
