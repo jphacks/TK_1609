@@ -87,7 +87,7 @@ void ofApp::audioOut 	(float * output, int bufferSize, int nChannels){
         float tmp = music.play(1);
 //        wave = car.sinewave(filter.hipass(tmp, modFreq)*modFreq*440);
 //        wave = filter.hipass(tmp, modFreq);
-//        wave = car.sinewave(tmp*modFreq*240);
+//        wave = car.sinewave(tmp*modFreq*440);
         wave = filter.hipass(tmp, modFreq);
         
         lAudio[i] = output[i*nChannels    ] = wave;
