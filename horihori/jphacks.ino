@@ -345,12 +345,6 @@ void setup() {
   // Adafruit
   strip.begin();
   // join I2C bus
-#if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
-  Wire.begin();
-  TWBR = 24; // 400kHz I2C clock (200kHz if CPU is 8MHz)
-#elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
-  Fastwire::setup(400, true);
-#endif
 
   // initialize serial port
 #ifdef DEBUG_MODE
@@ -359,30 +353,6 @@ void setup() {
 #else
   Serial.begin(9600);
 #endif
-
-  // mpu
-  mpu.initialize();
-  while (Serial.available());
-  devStatus = mpu.dmpInitialize();
-
-  // supply my own gyro offsets here, scaled for min sensitivity
-  mpu.setXGyroOffset(0);
-  mpu.setYGyroOffset(0);
-  mpu.setZGyroOffset(0);
-
-  if (devStatus == 0) {
-    mpu.setDMPEnabled(true);
-    attachInterrupt(0, dmpDataReady, RISING);
-    mpuIntStatus = mpu.getIntStatus();
-    dmpReady = true;
-    packetSize = mpu.dmpGetFIFOPacketSize();
-  } else {
-#ifdef DEBUG_MODE
-    Serial.print(F("DMP Initialization failed (code "));
-    Serial.print(devStatus);
-    Serial.println(F(")"));
-#endif
-  }
   strip.show();
 
   // timer
@@ -455,9 +425,11 @@ void loop() {
       rsvData = Serial.read();
       timer_count = 0;
     }
-
+ bool kusuri = mage4 <mage4_def;
+ bool naka = mage3 <mage3_def;
+ bool hito = mage2 <mage2_def;
     // point
-    if (rsvData == 10) {
+    if (kusuri&&naka&&!hito) {
       circle_interval_time = 5;
       finger_interval_time = 5;
       sensor_interrupt_flag = true;
@@ -481,7 +453,7 @@ void loop() {
       strip.show();
     }
     // グー
-    else if (rsvData == 11) {
+    else if (kusuri&&naka&&hit) {
       circle_interval_time = 1;
       finger_interval_time = 10;
       sensor_interrupt_flag = true;
@@ -500,7 +472,7 @@ void loop() {
       strip.show();
     }
     // ちょき
-    else if (rsvData == 12) {
+    else if (kusuri&&!naka&&!hit) {
       circle_interval_time = 1;
       finger_interval_time = 10;
       sensor_interrupt_flag = true;
